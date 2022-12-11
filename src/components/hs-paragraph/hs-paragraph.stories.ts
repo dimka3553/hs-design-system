@@ -4,17 +4,7 @@
  */
 export default {
   // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
-  title: 'Components/Button',
-  argTypes: {
-    variant: {
-      options: ['neutral', 'error'],
-      control: { type: 'radio' },
-    },
-    size: {
-      options: ['medium', 'small', 'large'],
-      control: { type: 'radio' },
-    },
-  },
+  title: 'Components/Paragraph',
 };
 
 /**
@@ -22,9 +12,9 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-button variant="${args.variant}" size="${args.size}">
+  <hs-paragraph>
     ${args.text}
-  </hs-button>
+  </hs-paragraph>
 `;
 
 /**
@@ -34,9 +24,7 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Button = Template.bind({});
-Button.args = {
-  text: 'Button',
-  variant: 'neutral',
-  size: 'medium',
+export const Paragraph = Template.bind({});
+Paragraph.args = {
+  text: 'etvetvetv',
 };
