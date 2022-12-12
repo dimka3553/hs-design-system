@@ -4,3 +4,17 @@
 */
 
 @import "../../design-tokens/css/_variables.css";
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url(../fonts/apercu_regular_pro.otf);
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Apercu Pro', 'sans-serif' !important; */
+  color: red !important;
+}

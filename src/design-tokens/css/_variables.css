@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 11 Dec 2022 09:05:54 GMT
+ * Generated on Mon, 12 Dec 2022 14:09:05 GMT
  */
 
 :root {
@@ -17,18 +17,7 @@
   --hs-spacing-spacing-64: [object Object];
   --hs-spacing-spacing-72: [object Object];
   --hs-spacing-spacing-80: [object Object];
-  --hs-color-color-d0ffd7: #d0ffd7;
-  --hs-color-color-89f58b: #89f58b;
-  --hs-color-color-42ea3e: #42ea3e;
-  --hs-color-color-3cd337: #3cd337;
-  --hs-color-color-35bc30: #35bc30;
-  --hs-color-color-2fa529: #2fa529;
-  --hs-color-color-288e22: #288e22;
-  --hs-color-color-22771c: #22771c;
-  --hs-color-color-1b6015: #1b6015;
-  --hs-color-color-15490e: #15490e;
-  --hs-color-color-0e3207: #0e3207;
-  --hs-color-color-081b00: #081b00;
+  --hs-gradient-gradient-purple-gradient-purple-50: [object Object];
   --hs-color-color-purple-purple-50: #f4f2fc;
   --hs-color-color-purple-purple-100: #ebe9f7;
   --hs-color-color-purple-purple-300: #c0b7eb;
@@ -52,7 +41,6 @@
   --hs-color-color-semantic-danger-50: #fbecec;
   --hs-color-color-semantic-danger-500: #ec5857;
   --hs-color-color-semantic-warning-500: #f6de63;
-  --hs-gradient-gradient-purple-gradient-purple-50: [object Object];
   --hs-grid-grid-desktop-12-columns: [object Object];
   --hs-grid-grid-tablet-8columns: [object Object];
   --hs-grid-grid-mobile-4columns: [object Object];
@@ -107,6 +95,7 @@
   --hs-font-font-mobile-quote-small: [object Object];
   --hs-effect-effect-sideline: [object Object];
   --hs-effect-effect-bottomline: [object Object];
+  --hs-effect-effect-focus-primary: [object Object];
   --hs-typography-typography-desktop-display-large-font-size: 212;
   --hs-typography-typography-desktop-display-large-text-decoration: none;
   --hs-typography-typography-desktop-display-large-font-family: Apercu Pro;

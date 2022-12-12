@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 11 Dec 2022 09:05:54 GMT
+ * Generated on Mon, 12 Dec 2022 14:09:05 GMT
  */
 
 export const BreakpointBreakpointsSm = 375;
@@ -16,18 +16,7 @@ export const SpacingSpacing56 = {"top":56,"bottom":56,"left":56,"right":56};
 export const SpacingSpacing64 = {"top":64,"bottom":64,"left":64,"right":64};
 export const SpacingSpacing72 = {"top":72,"bottom":72,"left":72,"right":72};
 export const SpacingSpacing80 = {"top":80,"bottom":80,"left":80,"right":80};
-export const ColorColorD0ffd7 = "#d0ffd7";
-export const ColorColor89f58b = "#89f58b";
-export const ColorColor42ea3e = "#42ea3e";
-export const ColorColor3cd337 = "#3cd337";
-export const ColorColor35bc30 = "#35bc30";
-export const ColorColor2fa529 = "#2fa529";
-export const ColorColor288e22 = "#288e22";
-export const ColorColor22771c = "#22771c";
-export const ColorColor1b6015 = "#1b6015";
-export const ColorColor15490e = "#15490e";
-export const ColorColor0e3207 = "#0e3207";
-export const ColorColor081b00 = "#081b00";
+export const GradientGradientPurpleGradientPurple50 = {"gradientType":"linear","rotation":180,"stops":[{"position":0,"color":"#fdfafdff"},{"position":1,"color":"#f0eff9ff"}]};
 export const ColorColorPurplePurple50 = "#f4f2fc";
 export const ColorColorPurplePurple100 = "#ebe9f7";
 export const ColorColorPurplePurple300 = "#c0b7eb";
@@ -51,7 +40,6 @@ export const ColorColorSemanticSuccess500 = "#5acf81";
 export const ColorColorSemanticDanger50 = "#fbecec";
 export const ColorColorSemanticDanger500 = "#ec5857";
 export const ColorColorSemanticWarning500 = "#f6de63";
-export const GradientGradientPurpleGradientPurple50 = {"gradientType":"linear","rotation":180,"stops":[{"position":0,"color":"#fdfafdff"},{"position":1,"color":"#f0eff9ff"}]};
 export const GridGridDesktop12Columns = {"pattern":"columns","gutterSize":24,"alignment":"stretch","count":12,"offset":32};
 export const GridGridTablet8columns = {"pattern":"columns","gutterSize":24,"alignment":"stretch","count":8,"offset":32};
 export const GridGridMobile4columns = {"pattern":"columns","gutterSize":24,"alignment":"stretch","count":4,"offset":32};
@@ -106,6 +94,7 @@ export const FontFontMobileQuoteLarge = {"fontSize":28,"textDecoration":"none","
 export const FontFontMobileQuoteSmall = {"fontSize":24,"textDecoration":"none","fontFamily":"Apercu Pro","fontWeight":300,"fontStyle":"normal","fontStretch":"normal","letterSpacing":-0.4,"lineHeight":33,"paragraphIndent":0,"paragraphSpacing":0,"textCase":"none"};
 export const EffectEffectSideline = {"shadowType":"innerShadow","radius":0,"color":"#e6e6e6ff","offsetX":-1,"offsetY":0,"spread":0};
 export const EffectEffectBottomline = {"shadowType":"innerShadow","radius":0,"color":"#e6e6e6ff","offsetX":0,"offsetY":-1,"spread":0};
+export const EffectEffectFocusPrimary = {"shadowType":"dropShadow","radius":0,"color":"#6b60d180","offsetX":0,"offsetY":0,"spread":3};
 export const TypographyTypographyDesktopDisplayLargeFontSize = 212;
 export const TypographyTypographyDesktopDisplayLargeTextDecoration = "none";
 export const TypographyTypographyDesktopDisplayLargeFontFamily = "Apercu Pro";
