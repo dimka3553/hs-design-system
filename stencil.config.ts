@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   // Update the namespace value with your project name (kebab-case)
-  namespace: 'design-system',
+  namespace: 'harbour-space',
   // Change this to any other location where you want to store global CSS settings for all web components
   globalStyle: 'src/shared/css/global.css',
   // Probs you don't want to change these below.

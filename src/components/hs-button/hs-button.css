@@ -1,5 +1,3 @@
-@import "../../design-tokens/css/_variables.css";
-
 :host {
   display: block;
 }
@@ -15,8 +13,8 @@ button {
 }
 
 button.neutral {
-  color: var(--hs-color-body);
-  background-color: var(--hs-color-primary);
+  color: var(--hs-color-white);
+  background-color: var(--hs-color-primary-500);
 }
 
 button.error {

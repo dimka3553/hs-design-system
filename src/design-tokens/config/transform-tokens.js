@@ -25,19 +25,14 @@ StyleDictionary.registerTransform({
 
 StyleDictionary.registerTransformGroup({
   name: 'custom/css',
-  transforms: StyleDictionary.transformGroup['css'].concat([
-    'size/px',
-    'size/percent',
-  ]),
+  transforms: StyleDictionary.transformGroup['css'].concat(['size/px', 'size/percent']),
 });
 
-// StyleDictionary.registerFilter({
-//   name: 'validToken',
-//   matcher: function(token) {
-//     return ['dimension', 'string', 'number', 'color'].includes(token.type)
-//   }
-// });
+StyleDictionary.registerFilter({
+  name: 'validToken',
+  matcher: function (token) {
+    return ['dimension', 'string', 'number', 'color'].includes(token.type);
+  },
+});
 
-StyleDictionary
-  .extend(baseConfig)
-  .buildAllPlatforms();
+StyleDictionary.extend(baseConfig).buildAllPlatforms();

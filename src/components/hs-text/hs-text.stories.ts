@@ -4,7 +4,19 @@
  */
 export default {
   // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
-  title: 'Components/Paragraph',
+  title: 'Components/Primitives/Text',
+  argTypes: {
+    as: {
+      //prettier-ignore
+      options: [
+        'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'label', 'legend', 'caption', 'blockquote', 'cite', 'code', 'del', 'dfn', 'em', 'i', 'ins', 'kbd', 'mark', 'pre', 'q', 's', 'samp', 'small', 'strong', 'sub', 'sup', 'time', 'u', 'var'
+      ],
+      control: { type: 'select' },
+    },
+    size: {
+      control: { type: 'number' },
+    },
+  },
 };
 
 /**
@@ -12,9 +24,9 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-paragraph>
+  <hs-text as="${args.as}" >
     ${args.text}
-  </hs-paragraph>
+  </hs-text>
 `;
 
 /**
@@ -24,7 +36,9 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Paragraph = Template.bind({});
-Paragraph.args = {
-  text: 'etvetvetv',
+export const Text = Template.bind({});
+Text.args = {
+  text: 'This is an example of a text component',
+  as: 'span',
+  size: '1',
 };

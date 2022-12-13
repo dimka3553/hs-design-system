@@ -10,7 +10,9 @@ export namespace Components {
         "size": string;
         "variant": string;
     }
-    interface HsParagraph {
+    interface HsText {
+        "as": "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "size": number;
     }
 }
 export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
@@ -24,15 +26,15 @@ declare global {
         prototype: HTMLHsButtonElement;
         new (): HTMLHsButtonElement;
     };
-    interface HTMLHsParagraphElement extends Components.HsParagraph, HTMLStencilElement {
+    interface HTMLHsTextElement extends Components.HsText, HTMLStencilElement {
     }
-    var HTMLHsParagraphElement: {
-        prototype: HTMLHsParagraphElement;
-        new (): HTMLHsParagraphElement;
+    var HTMLHsTextElement: {
+        prototype: HTMLHsTextElement;
+        new (): HTMLHsTextElement;
     };
     interface HTMLElementTagNameMap {
         "hs-button": HTMLHsButtonElement;
-        "hs-paragraph": HTMLHsParagraphElement;
+        "hs-text": HTMLHsTextElement;
     }
 }
 declare namespace LocalJSX {
@@ -41,11 +43,13 @@ declare namespace LocalJSX {
         "size"?: string;
         "variant"?: string;
     }
-    interface HsParagraph {
+    interface HsText {
+        "as"?: "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "size"?: number;
     }
     interface IntrinsicElements {
         "hs-button": HsButton;
-        "hs-paragraph": HsParagraph;
+        "hs-text": HsText;
     }
 }
 export { LocalJSX as JSX };
@@ -53,7 +57,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
-            "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
+            "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
     }
 }

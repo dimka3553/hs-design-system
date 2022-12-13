@@ -3,18 +3,23 @@
   shared across components in your Design System.
 */
 
-@import "../../design-tokens/css/_variables.css";
+@import url(../../../src/design-tokens/css/_variables.css);
 
-@font-face {
-  font-family: 'Apercu Pro';
-  src: url(../fonts/apercu_regular_pro.otf);
-  font-weight: 400;
+:root {
+  font-size: var(--hs-font-main-fontsize);
+  font-family: var(--hs-font-main-fontfamily);
+  font-weight: var(--hs-font-main-fontweight);
+  font-style: var(--hs-font-main-fontstyle);
+  font-stretch: var(--hs-font-main-fontstretch);
+  letter-spacing: var(--hs-font-main-letterspacing);
+  line-height: var(--hs-font-main-lineheight);
+  text-decoration: var(--hs-font-main-textdecoration);
+  text-transform: var(--hs-font-main-textcase);
+  text-indent: var(--hs-font-main-paragraphindent);
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* font-family: 'Apercu Pro', 'sans-serif' !important; */
-  color: red !important;
 }
