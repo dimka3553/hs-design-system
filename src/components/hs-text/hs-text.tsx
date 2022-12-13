@@ -29,6 +29,9 @@ export class HsText {
   @Prop()
   color = "black" as Color;
 
+  @Prop()
+  align: "left" | "center" | "right" | "justify" = "left";
+
   componentWillLoad() {
     //prettier-ignore
     if (!['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'label', 'legend', 'caption', 'blockquote', 'cite', 'code', 'del', 'dfn', 'em', 'i', 'ins', 'kbd', 'mark', 'pre', 'q', 's', 'samp', 'small', 'strong', 'sub', 'sup', 'time', 'u', 'var'].includes(this.as)) {
@@ -47,6 +50,12 @@ export class HsText {
       console.error(`Invalid color: ${this.color}`);
       this.color = "black";
     }
+
+    //prettier-ignore
+    if (!["left", "center", "right", "justify"].includes(this.align)) {
+      console.error(`Invalid align: ${this.align}`);
+      this.align = "left";
+    }
   }
 
   render() {
@@ -57,6 +66,7 @@ export class HsText {
         font-size:${this.size}rem;
         font-weight:${this.weight};
         color:var(--hs-color-${this.color});
+        text-align:${this.align};
     `
 
     return (

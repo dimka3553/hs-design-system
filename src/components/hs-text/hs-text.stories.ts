@@ -25,6 +25,11 @@ export default {
       //prettier-ignore
       options:["black", "primary-50", "primary-100", "primary-300", "primary-400", "primary-500", "primary-600", "primary-700", "primary-900", "primary-800", "white", "neutral-50", "neutral-100", "neutral-200", "neutral-500", "neutral-700", "neutral-900", "success-50", "success-500", "danger-50", "danger-500", "warning-50", "warning-500"],
       control: { type: 'select' },
+    },
+    align: {
+      //prettier-ignore
+      options: ['left', 'center', 'right', 'justify'],
+      control: { type: 'radio' },
     }
   },
 };
@@ -34,7 +39,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-text as="${args.as}" size="${args.size}" weight="${args.weight}" color="${args.color}">
+  <hs-text as="${args.as}" size="${args.size}" weight="${args.weight}" color="${args.color}" align="${args.align}">
     ${args.text}
   </hs-text>
 `;
@@ -52,5 +57,6 @@ Text.args = {
   as: 'span',
   size: 1,
   weight: '400',
-  color: "white"
+  color: "white",
+  align: 'left'
 };
