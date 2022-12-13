@@ -14,8 +14,18 @@ export default {
       control: { type: 'select' },
     },
     size: {
-      control: { type: 'number' },
+      control: { type: 'number', step:0.0625 },
+      
     },
+    weight: {
+      options: ["400", "500", "700"],
+      control: { type: 'radio' },
+    },
+    color: {
+      //prettier-ignore
+      options:["black", "primary-50", "primary-100", "primary-300", "primary-400", "primary-500", "primary-600", "primary-700", "primary-900", "primary-800", "white", "neutral-50", "neutral-100", "neutral-200", "neutral-500", "neutral-700", "neutral-900", "success-50", "success-500", "danger-50", "danger-500", "warning-50", "warning-500"],
+      control: { type: 'select' },
+    }
   },
 };
 
@@ -24,7 +34,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-text as="${args.as}" >
+  <hs-text as="${args.as}" size="${args.size}" weight="${args.weight}" color="${args.color}">
     ${args.text}
   </hs-text>
 `;
@@ -40,5 +50,7 @@ export const Text = Template.bind({});
 Text.args = {
   text: 'This is an example of a text component',
   as: 'span',
-  size: '1',
+  size: 1,
+  weight: '400',
+  color: "white"
 };
