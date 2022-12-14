@@ -7,10 +7,14 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type     | Default     |
-| --------- | --------- | ----------- | -------- | ----------- |
-| `size`    | `size`    |             | `string` | `"medium"`  |
-| `variant` | `variant` |             | `string` | `"neutral"` |
+| Property   | Attribute  | Description | Type                       | Default     |
+| ---------- | ---------- | ----------- | -------------------------- | ----------- |
+| `color`    | `color`    |             | `"primary" \| "secondary"` | `'primary'` |
+| `disabled` | `disabled` |             | `boolean`                  | `false`     |
+| `icon`     | `icon`     |             | `string`                   | `''`        |
+| `loading`  | `loading`  |             | `boolean`                  | `false`     |
+| `size`     | `size`     |             | `"lg" \| "md"`             | `'md'`      |
+| `type`     | `type`     |             | `"icon" \| "text"`         | `'text'`    |
 
 
 ## Events
@@ -19,6 +23,24 @@
 | --------- | ----------- | ------------------ |
 | `clicked` |             | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [hs-box](../hs-box)
+- [hs-text](../hs-text)
+- [hs-loading](../hs-loading)
+
+### Graph
+```mermaid
+graph TD;
+  hs-button --> hs-box
+  hs-button --> hs-text
+  hs-button --> hs-loading
+  hs-loading --> hs-box
+  style hs-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

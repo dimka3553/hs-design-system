@@ -43,7 +43,7 @@ const Template = args => `
 export const Header = Template.bind({});
 Header.args = {
   text: 'This is a header',
-  type: '1',
+  type: 'sm',
   align: 'left',
   color: 'primary',
 };

@@ -5,21 +5,35 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { htmlTags } from "./types";
+import { Colors, htmlTags } from "./types";
 export namespace Components {
     interface HsBox {
         "as": htmlTags;
+        "attr": string;
         "class": string;
         "styles": string;
     }
     interface HsButton {
-        "size": string;
-        "variant": string;
+        "color": 'primary' | 'secondary';
+        "disabled": boolean;
+        "icon": string;
+        "loading": boolean;
+        "size": 'md' | 'lg';
+        "type": 'text' | 'icon';
     }
     interface HsHeader {
         "align": 'left' | 'center' | 'right' | 'justify';
         "color": 'primary' | 'neutral' | 'white';
         "type": '1' | '2' | '3' | '4' | '5' | '6';
+    }
+    interface HsLoading {
+        "color": Colors;
+        "size": number;
+    }
+    interface HsParagraph {
+        "align": 'left' | 'center' | 'right' | 'justify';
+        "color": 'primary' | 'neutral' | 'white';
+        "type": 'sm' | 'md' | 'lg';
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -53,6 +67,18 @@ declare global {
         prototype: HTMLHsHeaderElement;
         new (): HTMLHsHeaderElement;
     };
+    interface HTMLHsLoadingElement extends Components.HsLoading, HTMLStencilElement {
+    }
+    var HTMLHsLoadingElement: {
+        prototype: HTMLHsLoadingElement;
+        new (): HTMLHsLoadingElement;
+    };
+    interface HTMLHsParagraphElement extends Components.HsParagraph, HTMLStencilElement {
+    }
+    var HTMLHsParagraphElement: {
+        prototype: HTMLHsParagraphElement;
+        new (): HTMLHsParagraphElement;
+    };
     interface HTMLHsTextElement extends Components.HsText, HTMLStencilElement {
     }
     var HTMLHsTextElement: {
@@ -63,24 +89,40 @@ declare global {
         "hs-box": HTMLHsBoxElement;
         "hs-button": HTMLHsButtonElement;
         "hs-header": HTMLHsHeaderElement;
+        "hs-loading": HTMLHsLoadingElement;
+        "hs-paragraph": HTMLHsParagraphElement;
         "hs-text": HTMLHsTextElement;
     }
 }
 declare namespace LocalJSX {
     interface HsBox {
         "as"?: htmlTags;
+        "attr"?: string;
         "class"?: string;
         "styles"?: string;
     }
     interface HsButton {
+        "color"?: 'primary' | 'secondary';
+        "disabled"?: boolean;
+        "icon"?: string;
+        "loading"?: boolean;
         "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
-        "size"?: string;
-        "variant"?: string;
+        "size"?: 'md' | 'lg';
+        "type"?: 'text' | 'icon';
     }
     interface HsHeader {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "color"?: 'primary' | 'neutral' | 'white';
         "type"?: '1' | '2' | '3' | '4' | '5' | '6';
+    }
+    interface HsLoading {
+        "color"?: Colors;
+        "size"?: number;
+    }
+    interface HsParagraph {
+        "align"?: 'left' | 'center' | 'right' | 'justify';
+        "color"?: 'primary' | 'neutral' | 'white';
+        "type"?: 'sm' | 'md' | 'lg';
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
@@ -94,6 +136,8 @@ declare namespace LocalJSX {
         "hs-box": HsBox;
         "hs-button": HsButton;
         "hs-header": HsHeader;
+        "hs-loading": HsLoading;
+        "hs-paragraph": HsParagraph;
         "hs-text": HsText;
     }
 }
@@ -104,6 +148,8 @@ declare module "@stencil/core" {
             "hs-box": LocalJSX.HsBox & JSXBase.HTMLAttributes<HTMLHsBoxElement>;
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
+            "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
+            "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
     }

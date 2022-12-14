@@ -4,28 +4,19 @@
  */
 export default {
   // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
-  title: 'Components/Form elements/Button',
+  title: 'Components/Typography/Paragraph',
   argTypes: {
     type: {
-      options: ['text', 'icon'],
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'radio' },
+    },
+    align: {
+      options: ['left', 'center', 'right', 'justify'],
       control: { type: 'radio' },
     },
     color: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'neutral', 'white'],
       control: { type: 'radio' },
-    },
-    size: {
-      options: ['md', 'lg'],
-      control: { type: 'radio' },
-    },
-    icon: {
-      control: { type: 'text' },
-    },
-    disabled: {
-      control: { type: 'boolean' },
-    },
-    loading: {
-      control: { type: 'boolean' },
     },
   },
 };
@@ -35,9 +26,11 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-button type="${args.type}" color="${args.color}" size="${args.size}" icon="${args.icon}"  disabled="${args.disabled}" loading="${args.loading}">
-    ${args.text}
-  </hs-button>
+  <hs-box ${args.color == 'white' && "styles='bg-primary-500 p-2'"}>
+    <hs-paragraph type="${args.type}" align="${args.align}" color=${args.color}>
+      ${args.text}
+    </hs-paragraph>
+  </hs-box>
 `;
 
 /**
@@ -47,13 +40,10 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Button = Template.bind({});
-Button.args = {
-  text: 'Button',
-  type: 'text',
+export const Paragraph = Template.bind({});
+Paragraph.args = {
+  text: 'This is a paragraph',
+  type: '1',
+  align: 'left',
   color: 'primary',
-  size: 'md',
-  icon: 'search',
-  disabled: false,
-  loading: false,
 };

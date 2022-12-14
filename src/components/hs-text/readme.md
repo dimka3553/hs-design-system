@@ -21,12 +21,16 @@
 
 ### Used by
 
+ - [hs-button](../hs-button)
  - [hs-header](../hs-header)
+ - [hs-paragraph](../hs-paragraph)
 
 ### Graph
 ```mermaid
 graph TD;
+  hs-button --> hs-text
   hs-header --> hs-text
+  hs-paragraph --> hs-text
   style hs-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -43,6 +43,9 @@ export class HsBox {
 
   @Prop()
   class: string;
+  
+  @Prop()
+  attr: string;
 
   @Element()
   el: HTMLElement;
@@ -67,6 +70,16 @@ export class HsBox {
     let properties = getElementAttributes(this.el.attributes);
 
     properties = { ...properties, class: this.styles };
+
+    //convert this.attr to an object
+    if (this.attr) {
+      try {
+        const attr = JSON.parse(this.attr);
+        properties = { ...properties, ...attr };
+      } catch (err) {
+        console.error('The attr attribute is not a valid JSON string.');
+      }
+    }
 
     return (
       <Tag {...properties}>
