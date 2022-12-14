@@ -11,7 +11,6 @@ type Color = "primary-50" | "primary-100" | "primary-300" | "primary-400" | "pri
   tag: 'hs-text',
   styleUrl: 'hs-text.css',
   shadow: false,
-  scoped: true,
 })
 export class HsText {
   @Element()

@@ -6,12 +6,16 @@ export default {
   // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
   title: 'Components/Typography/Header',
   argTypes: {
-    variant: {
-      options: ['neutral', 'error'],
+    type: {
+      options: ['1', '2', '3', '4', '5', '6'],
       control: { type: 'radio' },
     },
-    size: {
-      options: ['medium', 'small', 'large'],
+    align: {
+      options: ['left', 'center', 'right', 'justify'],
+      control: { type: 'radio' },
+    },
+    color: {
+      options: ['primary', 'neutral', 'white'],
       control: { type: 'radio' },
     },
   },
@@ -22,9 +26,11 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-header variant="${args.variant}" size="${args.size}">
-    ${args.text}
-  </hs-header>
+  <hs-box ${args.color == 'white' && "styles='bg-primary-500 p-2'"}>
+    <hs-header type="${args.type}" align="${args.align}" color=${args.color}>
+      ${args.text}
+    </hs-header>
+  </hs-box>
 `;
 
 /**
@@ -36,7 +42,8 @@ const Template = args => `
  */
 export const Header = Template.bind({});
 Header.args = {
-  text: 'Button',
-  variant: 'neutral',
-  size: 'medium',
+  text: 'This is a header',
+  type: '1',
+  align: 'left',
+  color: 'primary',
 };
