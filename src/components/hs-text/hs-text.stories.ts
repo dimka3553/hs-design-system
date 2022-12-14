@@ -14,11 +14,10 @@ export default {
       control: { type: 'select' },
     },
     size: {
-      control: { type: 'number', step:0.0625 },
-      
+      control: { type: 'number', step: 0.0625 },
     },
     weight: {
-      options: ["400", "500", "700"],
+      options: ['400', '500', '700'],
       control: { type: 'radio' },
     },
     color: {
@@ -30,7 +29,7 @@ export default {
       //prettier-ignore
       options: ['left', 'center', 'right', 'justify'],
       control: { type: 'radio' },
-    }
+    },
   },
 };
 
@@ -57,6 +56,6 @@ Text.args = {
   as: 'span',
   size: 1,
   weight: '400',
-  color: "white",
-  align: 'left'
+  color: 'black',
+  align: 'left',
 };

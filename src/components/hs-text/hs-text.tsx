@@ -24,13 +24,16 @@ export class HsText {
   size: number = 1;
 
   @Prop()
-  weight: "400" | "500" | "700" | "normal" | "bold" = "500";
+  weight: '400' | '500' | '700' | 'normal' | 'bold' = '500';
 
   @Prop()
-  color = "black" as Color;
+  color = 'black' as Color;
 
   @Prop()
-  align: "left" | "center" | "right" | "justify" = "left";
+  align: 'left' | 'center' | 'right' | 'justify' = 'left';
+
+  @Prop()
+  class: string;
 
   componentWillLoad() {
     //prettier-ignore
@@ -56,6 +59,11 @@ export class HsText {
       console.error(`Invalid align: ${this.align}`);
       this.align = "left";
     }
+
+    //if there is a class warn user that class should not be used
+    if (this.class) {
+      console.warn(`don't use the class attribute. Use as, color, size, weight, and align instead.`);
+    }
   }
 
   render() {
@@ -63,11 +71,11 @@ export class HsText {
 
     //create style for size
     const style = css`
-        font-size:${this.size}rem;
-        font-weight:${this.weight};
-        color:var(--hs-color-${this.color});
-        text-align:${this.align};
-    `
+      font-size: ${this.size}rem;
+      font-weight: ${this.weight};
+      color: var(--hs-color-${this.color});
+      text-align: ${this.align};
+    `;
 
     return (
       <Tag class={style}>
