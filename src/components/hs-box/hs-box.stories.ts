@@ -41,8 +41,8 @@ const Template = args => `
  */
 export const Box = Template.bind({});
 Box.args = {
-  content: '',
+  content: 'Harbour.Space',
   as: 'div',
-  styles: '',
+  styles: 'bg-primary-500 h-[150px] w-[150px] flex items-center justify-center text-white rounded-md',
   attributes: '',
 };

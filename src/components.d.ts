@@ -54,15 +54,23 @@ export namespace Components {
     interface HsRadioGroup {
         "direction": 'col' | 'row';
     }
+    interface HsSidebar {
+    }
+    interface HsSidebarLink {
+        "active": boolean;
+        "icon": string;
+        "label": string;
+        "to": string;
+    }
     interface HsStack {
         "direction": 'col' | 'row';
         "spacing": string;
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
-        "as": "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
+        "as": "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
         "class": string;
-        "color": "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color": "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size": number;
         "weight": '400' | '500' | '700' | 'normal' | 'bold';
     }
@@ -126,6 +134,18 @@ declare global {
         prototype: HTMLHsRadioGroupElement;
         new (): HTMLHsRadioGroupElement;
     };
+    interface HTMLHsSidebarElement extends Components.HsSidebar, HTMLStencilElement {
+    }
+    var HTMLHsSidebarElement: {
+        prototype: HTMLHsSidebarElement;
+        new (): HTMLHsSidebarElement;
+    };
+    interface HTMLHsSidebarLinkElement extends Components.HsSidebarLink, HTMLStencilElement {
+    }
+    var HTMLHsSidebarLinkElement: {
+        prototype: HTMLHsSidebarLinkElement;
+        new (): HTMLHsSidebarLinkElement;
+    };
     interface HTMLHsStackElement extends Components.HsStack, HTMLStencilElement {
     }
     var HTMLHsStackElement: {
@@ -148,6 +168,8 @@ declare global {
         "hs-loading": HTMLHsLoadingElement;
         "hs-paragraph": HTMLHsParagraphElement;
         "hs-radio-group": HTMLHsRadioGroupElement;
+        "hs-sidebar": HTMLHsSidebarElement;
+        "hs-sidebar-link": HTMLHsSidebarLinkElement;
         "hs-stack": HTMLHsStackElement;
         "hs-text": HTMLHsTextElement;
     }
@@ -201,15 +223,23 @@ declare namespace LocalJSX {
     interface HsRadioGroup {
         "direction"?: 'col' | 'row';
     }
+    interface HsSidebar {
+    }
+    interface HsSidebarLink {
+        "active"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "to"?: string;
+    }
     interface HsStack {
         "direction"?: 'col' | 'row';
         "spacing"?: string;
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
-        "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
+        "as"?: "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
         "class"?: string;
-        "color"?: "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color"?: "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size"?: number;
         "weight"?: '400' | '500' | '700' | 'normal' | 'bold';
     }
@@ -223,6 +253,8 @@ declare namespace LocalJSX {
         "hs-loading": HsLoading;
         "hs-paragraph": HsParagraph;
         "hs-radio-group": HsRadioGroup;
+        "hs-sidebar": HsSidebar;
+        "hs-sidebar-link": HsSidebarLink;
         "hs-stack": HsStack;
         "hs-text": HsText;
     }
@@ -240,6 +272,8 @@ declare module "@stencil/core" {
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
             "hs-radio-group": LocalJSX.HsRadioGroup & JSXBase.HTMLAttributes<HTMLHsRadioGroupElement>;
+            "hs-sidebar": LocalJSX.HsSidebar & JSXBase.HTMLAttributes<HTMLHsSidebarElement>;
+            "hs-sidebar-link": LocalJSX.HsSidebarLink & JSXBase.HTMLAttributes<HTMLHsSidebarLinkElement>;
             "hs-stack": LocalJSX.HsStack & JSXBase.HTMLAttributes<HTMLHsStackElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
