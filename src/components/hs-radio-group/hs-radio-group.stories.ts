@@ -3,19 +3,10 @@
  * the default sidebar faceted menu entry below.
  */
 export default {
-  // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
-  title: 'Components/Typography/Header',
+  title: 'Components/Form elements/Radiogroup',
   argTypes: {
-    type: {
-      options: ['1', '2', '3', '4', '5', '6'],
-      control: { type: 'radio' },
-    },
-    align: {
-      options: ['left', 'center', 'right', 'justify'],
-      control: { type: 'radio' },
-    },
-    color: {
-      options: ['primary', 'neutral', 'white'],
+    direction: {
+      options: ['row', 'col'],
       control: { type: 'radio' },
     },
   },
@@ -26,11 +17,23 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-box ${args.color == 'white' && "styles='bg-primary-500 p-2'"}>
-    <hs-header type="${args.type}" align="${args.align}" color=${args.color}>
-      ${args.text}
-    </hs-header>
-  </hs-box>
+  <hs-radio-group direction="${args.direction}">
+    <div>
+      <hs-input type="radio" itemid="yes" name="choice" value="yes" label="Yes" />
+    </div>
+    <div>
+      <hs-input type="radio" itemid="no" name="choice" value="331313" label="rf" />
+    </div>
+    <div>
+      <hs-input type="radio" itemid="ww" name="choice" value="35353535" label="rf" />
+    </div>
+    <div>
+      <hs-input type="radio" itemid="rr" name="choice" value="65432" label="rf" />
+    </div>
+      <hs-input type="radio" itemid="frfrfrf" name="choice" value="543" label="frf" />
+    </div>
+  </hs-radio-group>
+
 `;
 
 /**
@@ -40,10 +43,7 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Header = Template.bind({});
-Header.args = {
-  text: 'This is a header',
-  type: '1',
-  align: 'left',
-  color: 'primary',
+export const Radiogroup = Template.bind({});
+Radiogroup.args = {
+  direction: 'row',
 };

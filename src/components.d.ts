@@ -31,7 +31,9 @@ export namespace Components {
         "helptexttype": 'error' | 'info';
         "itemid": string;
         "label": string;
+        "name": string;
         "type": 'text' | 'password' | 'checkbox' | 'radio' | 'textarea';
+        "value": string;
     }
     interface HsLoading {
         "color": Colors;
@@ -41,6 +43,13 @@ export namespace Components {
         "align": 'left' | 'center' | 'right' | 'justify';
         "color": 'primary' | 'neutral' | 'white';
         "type": 'sm' | 'md' | 'lg';
+    }
+    interface HsRadioGroup {
+        "direction": 'col' | 'row';
+    }
+    interface HsStack {
+        "direction": 'col' | 'row';
+        "spacing": string;
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -92,6 +101,18 @@ declare global {
         prototype: HTMLHsParagraphElement;
         new (): HTMLHsParagraphElement;
     };
+    interface HTMLHsRadioGroupElement extends Components.HsRadioGroup, HTMLStencilElement {
+    }
+    var HTMLHsRadioGroupElement: {
+        prototype: HTMLHsRadioGroupElement;
+        new (): HTMLHsRadioGroupElement;
+    };
+    interface HTMLHsStackElement extends Components.HsStack, HTMLStencilElement {
+    }
+    var HTMLHsStackElement: {
+        prototype: HTMLHsStackElement;
+        new (): HTMLHsStackElement;
+    };
     interface HTMLHsTextElement extends Components.HsText, HTMLStencilElement {
     }
     var HTMLHsTextElement: {
@@ -105,6 +126,8 @@ declare global {
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
         "hs-paragraph": HTMLHsParagraphElement;
+        "hs-radio-group": HTMLHsRadioGroupElement;
+        "hs-stack": HTMLHsStackElement;
         "hs-text": HTMLHsTextElement;
     }
 }
@@ -134,7 +157,9 @@ declare namespace LocalJSX {
         "helptexttype"?: 'error' | 'info';
         "itemid"?: string;
         "label"?: string;
+        "name"?: string;
         "type"?: 'text' | 'password' | 'checkbox' | 'radio' | 'textarea';
+        "value"?: string;
     }
     interface HsLoading {
         "color"?: Colors;
@@ -144,6 +169,13 @@ declare namespace LocalJSX {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "color"?: 'primary' | 'neutral' | 'white';
         "type"?: 'sm' | 'md' | 'lg';
+    }
+    interface HsRadioGroup {
+        "direction"?: 'col' | 'row';
+    }
+    interface HsStack {
+        "direction"?: 'col' | 'row';
+        "spacing"?: string;
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
@@ -160,6 +192,8 @@ declare namespace LocalJSX {
         "hs-input": HsInput;
         "hs-loading": HsLoading;
         "hs-paragraph": HsParagraph;
+        "hs-radio-group": HsRadioGroup;
+        "hs-stack": HsStack;
         "hs-text": HsText;
     }
 }
@@ -173,6 +207,8 @@ declare module "@stencil/core" {
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
+            "hs-radio-group": LocalJSX.HsRadioGroup & JSXBase.HTMLAttributes<HTMLHsRadioGroupElement>;
+            "hs-stack": LocalJSX.HsStack & JSXBase.HTMLAttributes<HTMLHsStackElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
     }

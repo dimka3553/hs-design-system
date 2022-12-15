@@ -43,7 +43,7 @@ const Template = args => `
 export const Paragraph = Template.bind({});
 Paragraph.args = {
   text: 'This is a paragraph',
-  type: '1',
+  type: 'sm',
   align: 'left',
   color: 'primary',
 };

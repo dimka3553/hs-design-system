@@ -3,19 +3,13 @@
  * the default sidebar faceted menu entry below.
  */
 export default {
-  // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
-  title: 'Components/Typography/Header',
+  title: 'Components/Layout/Stack',
   argTypes: {
-    type: {
-      options: ['1', '2', '3', '4', '5', '6'],
-      control: { type: 'radio' },
+    spacing: {
+      control: { type: 'text' },
     },
-    align: {
-      options: ['left', 'center', 'right', 'justify'],
-      control: { type: 'radio' },
-    },
-    color: {
-      options: ['primary', 'neutral', 'white'],
+    direction: {
+      options: ['row', 'col'],
       control: { type: 'radio' },
     },
   },
@@ -26,11 +20,13 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-box ${args.color == 'white' && "styles='bg-primary-500 p-2'"}>
-    <hs-header type="${args.type}" align="${args.align}" color=${args.color}>
-      ${args.text}
-    </hs-header>
-  </hs-box>
+  <hs-stack spacing="${args.spacing}" direction="${args.direction}">
+    <hs-box styles="bg-primary-500 h-[100px] w-[100px] min-h-[100px] min-w-[100px]"></hs-box>
+    <hs-box styles="bg-primary-500 h-[100px] w-[100px] min-h-[100px] min-w-[100px]"></hs-box>
+    <hs-box styles="bg-primary-500 h-[100px] w-[100px] min-h-[100px] min-w-[100px]"></hs-box>
+    <hs-box styles="bg-primary-500 h-[100px] w-[100px] min-h-[100px] min-w-[100px]"></hs-box>
+    <hs-box styles="bg-primary-500 h-[100px] w-[100px] min-h-[100px] min-w-[100px]"></hs-box>
+  <hs-stack>
 `;
 
 /**
@@ -40,10 +36,8 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Header = Template.bind({});
-Header.args = {
-  text: 'This is a header',
-  type: '1',
-  align: 'left',
-  color: 'primary',
+export const Stack = Template.bind({});
+Stack.args = {
+  direction: 'row',
+  spacing: '4',
 };

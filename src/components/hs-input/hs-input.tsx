@@ -4,6 +4,7 @@ import { Component, h, Prop } from '@stencil/core';
   tag: 'hs-input',
   styleUrl: 'hs-input.css',
   shadow: false,
+  scoped: true,
 })
 export class HsInput {
   @Prop()
@@ -21,6 +22,12 @@ export class HsInput {
   @Prop()
   itemid: string = '';
 
+  @Prop()
+  name: string = '';
+
+  @Prop()
+  value: string = '';
+
   render() {
     if (this.type === 'textarea') {
       let style =
@@ -29,7 +36,7 @@ export class HsInput {
 
       return (
         <hs-box styles="relative">
-          <textarea id={this.itemid} class={style} name={this.itemid} placeholder=" "></textarea>
+          <textarea id={this.itemid} class={style} name={this.itemid} placeholder=" " value={this.value}></textarea>
           <label
             htmlFor={this.itemid}
             class={'absolute p-2 m-1 transition-[0.2s] bg-white top-0 left-0 z-[-1] ' + (this.helptexttype != 'error' ? 'text-neutral-500' : '!text-danger-500')}
@@ -41,20 +48,20 @@ export class HsInput {
       );
     } else if (this.type === 'radio') {
       return (
-        <hs-box styles="flex items-center">
-          <input type={this.type} id={this.itemid} name={this.itemid} />
+        <div class="flex items-center">
+          <input type={this.type} id={this.itemid} name={this.name} value={this.value} />
           <label htmlFor={this.itemid} class={this.type}>
             <div class="radioselected"></div>
           </label>
           <label class="ml-3" htmlFor={this.itemid}>
             {this.label}
           </label>
-        </hs-box>
+        </div>
       );
     } else if (this.type === 'checkbox') {
       return (
         <hs-box styles="flex items-center">
-          <input type={this.type} id={this.itemid} name={this.itemid} />
+          <input type={this.type} id={this.itemid} name={this.name} value={this.value} />
           <label htmlFor={this.itemid} class={this.type}>
             <div class="tick">
               <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +86,7 @@ export class HsInput {
 
       return (
         <hs-box styles="relative">
-          <input type={this.type} id={this.itemid} class={style} name={this.itemid} placeholder=" " />
+          <input type={this.type} id={this.itemid} class={style} name={this.name} placeholder=" " value={this.value} />
           <label
             htmlFor={this.itemid}
             class={'absolute p-2 m-1 transition-[0.2s] bg-white top-0 left-0 z-[-1] ' + (this.helptexttype != 'error' ? 'text-neutral-500' : '!text-danger-500')}

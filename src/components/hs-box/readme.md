@@ -22,6 +22,7 @@
  - [hs-button](../hs-button)
  - [hs-input](../hs-input)
  - [hs-loading](../hs-loading)
+ - [hs-stack](../hs-stack)
 
 ### Graph
 ```mermaid
@@ -29,6 +30,7 @@ graph TD;
   hs-button --> hs-box
   hs-input --> hs-box
   hs-loading --> hs-box
+  hs-stack --> hs-box
   style hs-box fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

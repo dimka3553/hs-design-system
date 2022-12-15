@@ -13,7 +13,9 @@
 | `helptexttype` | `helptexttype` |             | `"error" \| "info"`                                           | `'info'` |
 | `itemid`       | `itemid`       |             | `string`                                                      | `''`     |
 | `label`        | `label`        |             | `string`                                                      | `''`     |
+| `name`         | `name`         |             | `string`                                                      | `''`     |
 | `type`         | `type`         |             | `"checkbox" \| "password" \| "radio" \| "text" \| "textarea"` | `'text'` |
+| `value`        | `value`        |             | `string`                                                      | `''`     |
 
 
 ## Dependencies
