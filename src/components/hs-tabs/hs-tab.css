@@ -1,0 +1,19 @@
+.hs-tab,
+.hs-tab--selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: var(--hs-color-neutral-100);
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+.hs-tab--selected {
+  background: var(--hs-color-primary-50);
+  color: var(--hs-color-primary-500);
+}

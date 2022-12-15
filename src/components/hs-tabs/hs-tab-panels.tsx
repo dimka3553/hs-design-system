@@ -1,18 +1,15 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'hs-tabnav',
-  styleUrl: 'hs-tabnav.css',
+  tag: 'hs-tab-panels',
   shadow: true,
 })
-export class HsTabnav {
-
+export class HsTabPanels {
   render() {
     return (
       <Host>
-        <slot></slot>
+        <slot />
       </Host>
-    );
+    )
   }
-
 }

@@ -28,5 +28,5 @@ const Template = args => `
  */
 export const Modal = Template.bind({});
 Modal.args = {
-  code: "<div class='bg-primary-50 text-primary-500 border-[2px] border-primary-500 h-[200px] flex items-center justify-center' >Slot component</div>",
+  code: "<hs-box as='div' class='bg-primary-50 text-primary-500 border-[2px] border-primary-500 h-[200px] flex items-center justify-center'>Slot component</hs-box>",
 };

@@ -92,13 +92,25 @@ export namespace Components {
         "direction": 'col' | 'row';
         "spacing": string;
     }
-    interface HsTabnav {
+    interface HsTab {
+        "toggleSelected": (selected: boolean) => Promise<void>;
     }
-    interface HsTabsnav {
+    interface HsTabList {
+    }
+    interface HsTabPanel {
+        "toggleSelected": (selected: boolean) => Promise<void>;
+    }
+    interface HsTabPanels {
+    }
+    interface HsTabs {
+        /**
+          * Configures the tab/panels to select by default upon loading.
+         */
+        "selectedIndex": number;
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
-        "as": "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
+        "as": "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
         "class": string;
         "color": "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size": number;
@@ -108,6 +120,10 @@ export namespace Components {
 export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLHsButtonElement;
+}
+export interface HsTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLHsTabElement;
 }
 declare global {
     interface HTMLHsAlertElement extends Components.HsAlert, HTMLStencilElement {
@@ -224,17 +240,35 @@ declare global {
         prototype: HTMLHsStackElement;
         new (): HTMLHsStackElement;
     };
-    interface HTMLHsTabnavElement extends Components.HsTabnav, HTMLStencilElement {
+    interface HTMLHsTabElement extends Components.HsTab, HTMLStencilElement {
     }
-    var HTMLHsTabnavElement: {
-        prototype: HTMLHsTabnavElement;
-        new (): HTMLHsTabnavElement;
+    var HTMLHsTabElement: {
+        prototype: HTMLHsTabElement;
+        new (): HTMLHsTabElement;
     };
-    interface HTMLHsTabsnavElement extends Components.HsTabsnav, HTMLStencilElement {
+    interface HTMLHsTabListElement extends Components.HsTabList, HTMLStencilElement {
     }
-    var HTMLHsTabsnavElement: {
-        prototype: HTMLHsTabsnavElement;
-        new (): HTMLHsTabsnavElement;
+    var HTMLHsTabListElement: {
+        prototype: HTMLHsTabListElement;
+        new (): HTMLHsTabListElement;
+    };
+    interface HTMLHsTabPanelElement extends Components.HsTabPanel, HTMLStencilElement {
+    }
+    var HTMLHsTabPanelElement: {
+        prototype: HTMLHsTabPanelElement;
+        new (): HTMLHsTabPanelElement;
+    };
+    interface HTMLHsTabPanelsElement extends Components.HsTabPanels, HTMLStencilElement {
+    }
+    var HTMLHsTabPanelsElement: {
+        prototype: HTMLHsTabPanelsElement;
+        new (): HTMLHsTabPanelsElement;
+    };
+    interface HTMLHsTabsElement extends Components.HsTabs, HTMLStencilElement {
+    }
+    var HTMLHsTabsElement: {
+        prototype: HTMLHsTabsElement;
+        new (): HTMLHsTabsElement;
     };
     interface HTMLHsTextElement extends Components.HsText, HTMLStencilElement {
     }
@@ -262,8 +296,11 @@ declare global {
         "hs-sidebar": HTMLHsSidebarElement;
         "hs-sidebar-link": HTMLHsSidebarLinkElement;
         "hs-stack": HTMLHsStackElement;
-        "hs-tabnav": HTMLHsTabnavElement;
-        "hs-tabsnav": HTMLHsTabsnavElement;
+        "hs-tab": HTMLHsTabElement;
+        "hs-tab-list": HTMLHsTabListElement;
+        "hs-tab-panel": HTMLHsTabPanelElement;
+        "hs-tab-panels": HTMLHsTabPanelsElement;
+        "hs-tabs": HTMLHsTabsElement;
         "hs-text": HTMLHsTextElement;
     }
 }
@@ -354,13 +391,24 @@ declare namespace LocalJSX {
         "direction"?: 'col' | 'row';
         "spacing"?: string;
     }
-    interface HsTabnav {
+    interface HsTab {
+        "onTabClick"?: (event: HsTabCustomEvent<any>) => void;
     }
-    interface HsTabsnav {
+    interface HsTabList {
+    }
+    interface HsTabPanel {
+    }
+    interface HsTabPanels {
+    }
+    interface HsTabs {
+        /**
+          * Configures the tab/panels to select by default upon loading.
+         */
+        "selectedIndex"?: number;
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
-        "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
+        "as"?: "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
         "class"?: string;
         "color"?: "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size"?: number;
@@ -386,8 +434,11 @@ declare namespace LocalJSX {
         "hs-sidebar": HsSidebar;
         "hs-sidebar-link": HsSidebarLink;
         "hs-stack": HsStack;
-        "hs-tabnav": HsTabnav;
-        "hs-tabsnav": HsTabsnav;
+        "hs-tab": HsTab;
+        "hs-tab-list": HsTabList;
+        "hs-tab-panel": HsTabPanel;
+        "hs-tab-panels": HsTabPanels;
+        "hs-tabs": HsTabs;
         "hs-text": HsText;
     }
 }
@@ -414,8 +465,11 @@ declare module "@stencil/core" {
             "hs-sidebar": LocalJSX.HsSidebar & JSXBase.HTMLAttributes<HTMLHsSidebarElement>;
             "hs-sidebar-link": LocalJSX.HsSidebarLink & JSXBase.HTMLAttributes<HTMLHsSidebarLinkElement>;
             "hs-stack": LocalJSX.HsStack & JSXBase.HTMLAttributes<HTMLHsStackElement>;
-            "hs-tabnav": LocalJSX.HsTabnav & JSXBase.HTMLAttributes<HTMLHsTabnavElement>;
-            "hs-tabsnav": LocalJSX.HsTabsnav & JSXBase.HTMLAttributes<HTMLHsTabsnavElement>;
+            "hs-tab": LocalJSX.HsTab & JSXBase.HTMLAttributes<HTMLHsTabElement>;
+            "hs-tab-list": LocalJSX.HsTabList & JSXBase.HTMLAttributes<HTMLHsTabListElement>;
+            "hs-tab-panel": LocalJSX.HsTabPanel & JSXBase.HTMLAttributes<HTMLHsTabPanelElement>;
+            "hs-tab-panels": LocalJSX.HsTabPanels & JSXBase.HTMLAttributes<HTMLHsTabPanelsElement>;
+            "hs-tabs": LocalJSX.HsTabs & JSXBase.HTMLAttributes<HTMLHsTabsElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
     }
