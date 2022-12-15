@@ -10,6 +10,12 @@ export namespace Components {
     interface HsAnchor {
         "to": string;
     }
+    interface HsAvatar {
+    }
+    interface HsBadge {
+        "color": Colors;
+        "size": 'sm' | 'md' | 'lg';
+    }
     interface HsBox {
         "as": htmlTags;
         "attr": string;
@@ -27,6 +33,8 @@ export namespace Components {
     interface HsCallout {
         "text": string;
         "type": 'info' | 'success' | 'warning' | 'danger';
+    }
+    interface HsCard {
     }
     interface HsHeader {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -74,7 +82,7 @@ export namespace Components {
         "align": 'left' | 'center' | 'right' | 'justify';
         "as": "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class": string;
-        "color": "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color": "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size": number;
         "weight": '400' | '500' | '700' | 'normal' | 'bold';
     }
@@ -89,6 +97,18 @@ declare global {
     var HTMLHsAnchorElement: {
         prototype: HTMLHsAnchorElement;
         new (): HTMLHsAnchorElement;
+    };
+    interface HTMLHsAvatarElement extends Components.HsAvatar, HTMLStencilElement {
+    }
+    var HTMLHsAvatarElement: {
+        prototype: HTMLHsAvatarElement;
+        new (): HTMLHsAvatarElement;
+    };
+    interface HTMLHsBadgeElement extends Components.HsBadge, HTMLStencilElement {
+    }
+    var HTMLHsBadgeElement: {
+        prototype: HTMLHsBadgeElement;
+        new (): HTMLHsBadgeElement;
     };
     interface HTMLHsBoxElement extends Components.HsBox, HTMLStencilElement {
     }
@@ -107,6 +127,12 @@ declare global {
     var HTMLHsCalloutElement: {
         prototype: HTMLHsCalloutElement;
         new (): HTMLHsCalloutElement;
+    };
+    interface HTMLHsCardElement extends Components.HsCard, HTMLStencilElement {
+    }
+    var HTMLHsCardElement: {
+        prototype: HTMLHsCardElement;
+        new (): HTMLHsCardElement;
     };
     interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
     }
@@ -170,9 +196,12 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "hs-anchor": HTMLHsAnchorElement;
+        "hs-avatar": HTMLHsAvatarElement;
+        "hs-badge": HTMLHsBadgeElement;
         "hs-box": HTMLHsBoxElement;
         "hs-button": HTMLHsButtonElement;
         "hs-callout": HTMLHsCalloutElement;
+        "hs-card": HTMLHsCardElement;
         "hs-header": HTMLHsHeaderElement;
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
@@ -188,6 +217,12 @@ declare global {
 declare namespace LocalJSX {
     interface HsAnchor {
         "to"?: string;
+    }
+    interface HsAvatar {
+    }
+    interface HsBadge {
+        "color"?: Colors;
+        "size"?: 'sm' | 'md' | 'lg';
     }
     interface HsBox {
         "as"?: htmlTags;
@@ -207,6 +242,8 @@ declare namespace LocalJSX {
     interface HsCallout {
         "text"?: string;
         "type"?: 'info' | 'success' | 'warning' | 'danger';
+    }
+    interface HsCard {
     }
     interface HsHeader {
         "align"?: 'left' | 'center' | 'right' | 'justify';
@@ -254,15 +291,18 @@ declare namespace LocalJSX {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class"?: string;
-        "color"?: "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color"?: "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size"?: number;
         "weight"?: '400' | '500' | '700' | 'normal' | 'bold';
     }
     interface IntrinsicElements {
         "hs-anchor": HsAnchor;
+        "hs-avatar": HsAvatar;
+        "hs-badge": HsBadge;
         "hs-box": HsBox;
         "hs-button": HsButton;
         "hs-callout": HsCallout;
+        "hs-card": HsCard;
         "hs-header": HsHeader;
         "hs-input": HsInput;
         "hs-loading": HsLoading;
@@ -280,9 +320,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "hs-anchor": LocalJSX.HsAnchor & JSXBase.HTMLAttributes<HTMLHsAnchorElement>;
+            "hs-avatar": LocalJSX.HsAvatar & JSXBase.HTMLAttributes<HTMLHsAvatarElement>;
+            "hs-badge": LocalJSX.HsBadge & JSXBase.HTMLAttributes<HTMLHsBadgeElement>;
             "hs-box": LocalJSX.HsBox & JSXBase.HTMLAttributes<HTMLHsBoxElement>;
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
             "hs-callout": LocalJSX.HsCallout & JSXBase.HTMLAttributes<HTMLHsCalloutElement>;
+            "hs-card": LocalJSX.HsCard & JSXBase.HTMLAttributes<HTMLHsCardElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
