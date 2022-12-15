@@ -3,27 +3,23 @@
  * the default sidebar faceted menu entry below.
  */
 export default {
-  title: 'Components/Navigation/Sidebar',
-  argTypes: {},
+  title: 'Components/Assets/Loading',
+  argTypes: {
+    size: {
+      control: { type: 'text' },
+    },
+    color: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 /**
  * Now you can create a reusable template for your component that you
  * can later on customize with different values for its attribute properties and events
  */
-const Template = () => `
-  <hs-sidebar >
-  <div>  
-    <hs-sidebar-link to="#" active="true" icon="house" label="Home">
-  </div>
-  <div>
-    <hs-sidebar-link to="#" active="false" icon="user" label="Students">
-  </div>
-  <div>
-    <hs-sidebar-link to="#" active="false" icon="chalkboard-user" label="Teachers">
-  </div>
-  </hs-sidebar>
-  <span></span>
+const Template = args => `
+  <hs-loading size="${args.size}" color="${args.color}"/>
 `;
 
 /**
@@ -33,5 +29,8 @@ const Template = () => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Sidebar = Template.bind({});
-Sidebar.args = {};
+export const Loading = Template.bind({});
+Loading.args = {
+  size: '2',
+  color: 'primary-500',
+};

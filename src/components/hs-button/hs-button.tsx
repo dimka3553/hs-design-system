@@ -10,7 +10,7 @@ export class HsButton {
   type: 'text' | 'icon' = 'text';
 
   @Prop()
-  size: 'md' | 'lg' = 'md';
+  size: 'sm' | 'md' | 'lg' = 'md';
 
   @Prop()
   color: 'primary' | 'secondary' = 'primary';
@@ -39,6 +39,10 @@ export class HsButton {
       s = 'h-14 min-h-14 px-10 gap-10';
     } else if (this.size == 'md' && this.type == 'icon') {
       s = 'h-12 w-12 min-h-12 min-w-12';
+    } else if (this.size == 'sm' && this.type == 'icon') {
+      s = 'h-8 w-8 min-h-8 min-w-8';
+    } else if (this.size == 'sm' && this.type == 'text') {
+      s = 'h-8 min-h-8 px-2 gap-4';
     }
 
     //if type is icon and slot is not empty, throw error

@@ -13,7 +13,7 @@
 | `disabled` | `disabled` |             | `boolean`                  | `false`     |
 | `icon`     | `icon`     |             | `string`                   | `''`        |
 | `loading`  | `loading`  |             | `boolean`                  | `false`     |
-| `size`     | `size`     |             | `"lg" \| "md"`             | `'md'`      |
+| `size`     | `size`     |             | `"lg" \| "md" \| "sm"`     | `'md'`      |
 | `type`     | `type`     |             | `"icon" \| "text"`         | `'text'`    |
 
 
@@ -25,6 +25,10 @@
 
 
 ## Dependencies
+
+### Used by
+
+ - [hs-pagination](../hs-pagination)
 
 ### Depends on
 
@@ -39,6 +43,7 @@ graph TD;
   hs-button --> hs-text
   hs-button --> hs-loading
   hs-loading --> hs-box
+  hs-pagination --> hs-button
   style hs-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

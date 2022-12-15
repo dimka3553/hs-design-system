@@ -3,7 +3,7 @@
  * the default sidebar faceted menu entry below.
  */
 export default {
-  title: 'Components/Navigation/Sidebar',
+  title: 'Components/Navigation/Pagination',
   argTypes: {},
 };
 
@@ -12,18 +12,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = () => `
-  <hs-sidebar >
-  <div>  
-    <hs-sidebar-link to="#" active="true" icon="house" label="Home">
-  </div>
-  <div>
-    <hs-sidebar-link to="#" active="false" icon="user" label="Students">
-  </div>
-  <div>
-    <hs-sidebar-link to="#" active="false" icon="chalkboard-user" label="Teachers">
-  </div>
-  </hs-sidebar>
-  <span></span>
+  <hs-pagination />
 `;
 
 /**
@@ -33,5 +22,5 @@ const Template = () => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Sidebar = Template.bind({});
-Sidebar.args = {};
+export const Pagination = Template.bind({});
+Pagination.args = {};

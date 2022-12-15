@@ -21,7 +21,7 @@ export namespace Components {
         "disabled": boolean;
         "icon": string;
         "loading": boolean;
-        "size": 'md' | 'lg';
+        "size": 'sm' | 'md' | 'lg';
         "type": 'text' | 'icon';
     }
     interface HsCallout {
@@ -46,6 +46,10 @@ export namespace Components {
         "color": Colors;
         "size": number;
     }
+    interface HsPagination {
+        "currentPage": number;
+        "totalPages": number;
+    }
     interface HsParagraph {
         "align": 'left' | 'center' | 'right' | 'justify';
         "color": 'primary' | 'neutral' | 'white';
@@ -68,9 +72,9 @@ export namespace Components {
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
-        "as": "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "as": "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class": string;
-        "color": "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color": "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size": number;
         "weight": '400' | '500' | '700' | 'normal' | 'bold';
     }
@@ -122,6 +126,12 @@ declare global {
         prototype: HTMLHsLoadingElement;
         new (): HTMLHsLoadingElement;
     };
+    interface HTMLHsPaginationElement extends Components.HsPagination, HTMLStencilElement {
+    }
+    var HTMLHsPaginationElement: {
+        prototype: HTMLHsPaginationElement;
+        new (): HTMLHsPaginationElement;
+    };
     interface HTMLHsParagraphElement extends Components.HsParagraph, HTMLStencilElement {
     }
     var HTMLHsParagraphElement: {
@@ -166,6 +176,7 @@ declare global {
         "hs-header": HTMLHsHeaderElement;
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
+        "hs-pagination": HTMLHsPaginationElement;
         "hs-paragraph": HTMLHsParagraphElement;
         "hs-radio-group": HTMLHsRadioGroupElement;
         "hs-sidebar": HTMLHsSidebarElement;
@@ -190,7 +201,7 @@ declare namespace LocalJSX {
         "icon"?: string;
         "loading"?: boolean;
         "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
-        "size"?: 'md' | 'lg';
+        "size"?: 'sm' | 'md' | 'lg';
         "type"?: 'text' | 'icon';
     }
     interface HsCallout {
@@ -215,6 +226,10 @@ declare namespace LocalJSX {
         "color"?: Colors;
         "size"?: number;
     }
+    interface HsPagination {
+        "currentPage"?: number;
+        "totalPages"?: number;
+    }
     interface HsParagraph {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "color"?: 'primary' | 'neutral' | 'white';
@@ -237,9 +252,9 @@ declare namespace LocalJSX {
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
-        "as"?: "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class"?: string;
-        "color"?: "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
+        "color"?: "white" | "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size"?: number;
         "weight"?: '400' | '500' | '700' | 'normal' | 'bold';
     }
@@ -251,6 +266,7 @@ declare namespace LocalJSX {
         "hs-header": HsHeader;
         "hs-input": HsInput;
         "hs-loading": HsLoading;
+        "hs-pagination": HsPagination;
         "hs-paragraph": HsParagraph;
         "hs-radio-group": HsRadioGroup;
         "hs-sidebar": HsSidebar;
@@ -270,6 +286,7 @@ declare module "@stencil/core" {
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
+            "hs-pagination": LocalJSX.HsPagination & JSXBase.HTMLAttributes<HTMLHsPaginationElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
             "hs-radio-group": LocalJSX.HsRadioGroup & JSXBase.HTMLAttributes<HTMLHsRadioGroupElement>;
             "hs-sidebar": LocalJSX.HsSidebar & JSXBase.HTMLAttributes<HTMLHsSidebarElement>;
