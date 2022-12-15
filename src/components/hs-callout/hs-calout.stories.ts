@@ -3,10 +3,13 @@
  * the default sidebar faceted menu entry below.
  */
 export default {
-  title: 'Components/Form elements/Radiogroup',
+  title: 'Components/Text content/Callout',
   argTypes: {
-    direction: {
-      options: ['row', 'col'],
+    text: {
+      control: { type: 'text' },
+    },
+    type: {
+      options: ['info', 'success', 'warning', 'error'],
       control: { type: 'radio' },
     },
   },
@@ -17,23 +20,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <hs-radio-group direction="${args.direction}">
-    <div>
-      <hs-input type="radio" itemid="yes" name="choice" value="yes" label="Yes" />
-    </div>
-    <div>
-      <hs-input type="radio" itemid="no" name="choice" value="331313" label="No" />
-    </div>
-    <div>
-      <hs-input type="radio" itemid="ww" name="choice" value="35353535" label="Maybe" />
-    </div>
-    <div>
-      <hs-input type="radio" itemid="rr" name="choice" value="65432" label="I don't know" />
-    </div>
-      <hs-input type="radio" itemid="frfrfrf" name="choice" value="543" label="Prefer not to answer" />
-    </div>
-  </hs-radio-group>
-
+  <hs-callout type="${args.type}" text="${args.text}"/>
 `;
 
 /**
@@ -43,7 +30,8 @@ const Template = args => `
  * IMPORTANT: Remember to export each template binding!
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Radiogroup = Template.bind({});
-Radiogroup.args = {
-  direction: 'row',
+export const Callout = Template.bind({});
+Callout.args = {
+  text: 'This is callout text',
+  type: 'info',
 };

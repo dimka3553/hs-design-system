@@ -21,6 +21,10 @@ export namespace Components {
         "size": 'md' | 'lg';
         "type": 'text' | 'icon';
     }
+    interface HsCallout {
+        "text": string;
+        "type": 'info' | 'success' | 'warning' | 'danger';
+    }
     interface HsHeader {
         "align": 'left' | 'center' | 'right' | 'justify';
         "color": 'primary' | 'neutral' | 'white';
@@ -77,6 +81,12 @@ declare global {
         prototype: HTMLHsButtonElement;
         new (): HTMLHsButtonElement;
     };
+    interface HTMLHsCalloutElement extends Components.HsCallout, HTMLStencilElement {
+    }
+    var HTMLHsCalloutElement: {
+        prototype: HTMLHsCalloutElement;
+        new (): HTMLHsCalloutElement;
+    };
     interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
     }
     var HTMLHsHeaderElement: {
@@ -122,6 +132,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "hs-box": HTMLHsBoxElement;
         "hs-button": HTMLHsButtonElement;
+        "hs-callout": HTMLHsCalloutElement;
         "hs-header": HTMLHsHeaderElement;
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
@@ -146,6 +157,10 @@ declare namespace LocalJSX {
         "onClicked"?: (event: HsButtonCustomEvent<any>) => void;
         "size"?: 'md' | 'lg';
         "type"?: 'text' | 'icon';
+    }
+    interface HsCallout {
+        "text"?: string;
+        "type"?: 'info' | 'success' | 'warning' | 'danger';
     }
     interface HsHeader {
         "align"?: 'left' | 'center' | 'right' | 'justify';
@@ -188,6 +203,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "hs-box": HsBox;
         "hs-button": HsButton;
+        "hs-callout": HsCallout;
         "hs-header": HsHeader;
         "hs-input": HsInput;
         "hs-loading": HsLoading;
@@ -203,6 +219,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "hs-box": LocalJSX.HsBox & JSXBase.HTMLAttributes<HTMLHsBoxElement>;
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
+            "hs-callout": LocalJSX.HsCallout & JSXBase.HTMLAttributes<HTMLHsCalloutElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
