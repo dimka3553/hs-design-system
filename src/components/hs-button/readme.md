@@ -28,6 +28,7 @@
 
 ### Used by
 
+ - [hs-demo-modal](../hs-modal)
  - [hs-pagination](../hs-pagination)
 
 ### Depends on
@@ -43,6 +44,7 @@ graph TD;
   hs-button --> hs-text
   hs-button --> hs-loading
   hs-loading --> hs-box
+  hs-demo-modal --> hs-button
   hs-pagination --> hs-button
   style hs-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

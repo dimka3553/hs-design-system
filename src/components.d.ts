@@ -44,6 +44,8 @@ export namespace Components {
         "image": string;
         "subtitle": string;
     }
+    interface HsDemoModal {
+    }
     interface HsHeader {
         "align": 'left' | 'center' | 'right' | 'justify';
         "color": 'primary' | 'neutral' | 'white';
@@ -61,6 +63,10 @@ export namespace Components {
     interface HsLoading {
         "color": Colors;
         "size": number;
+    }
+    interface HsModal {
+        "modaltitle": string;
+        "open": boolean;
     }
     interface HsPagination {
         "currentpage": number;
@@ -85,6 +91,10 @@ export namespace Components {
     interface HsStack {
         "direction": 'col' | 'row';
         "spacing": string;
+    }
+    interface HsTabnav {
+    }
+    interface HsTabsnav {
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -148,6 +158,12 @@ declare global {
         prototype: HTMLHsCardElement;
         new (): HTMLHsCardElement;
     };
+    interface HTMLHsDemoModalElement extends Components.HsDemoModal, HTMLStencilElement {
+    }
+    var HTMLHsDemoModalElement: {
+        prototype: HTMLHsDemoModalElement;
+        new (): HTMLHsDemoModalElement;
+    };
     interface HTMLHsHeaderElement extends Components.HsHeader, HTMLStencilElement {
     }
     var HTMLHsHeaderElement: {
@@ -165,6 +181,12 @@ declare global {
     var HTMLHsLoadingElement: {
         prototype: HTMLHsLoadingElement;
         new (): HTMLHsLoadingElement;
+    };
+    interface HTMLHsModalElement extends Components.HsModal, HTMLStencilElement {
+    }
+    var HTMLHsModalElement: {
+        prototype: HTMLHsModalElement;
+        new (): HTMLHsModalElement;
     };
     interface HTMLHsPaginationElement extends Components.HsPagination, HTMLStencilElement {
     }
@@ -202,6 +224,18 @@ declare global {
         prototype: HTMLHsStackElement;
         new (): HTMLHsStackElement;
     };
+    interface HTMLHsTabnavElement extends Components.HsTabnav, HTMLStencilElement {
+    }
+    var HTMLHsTabnavElement: {
+        prototype: HTMLHsTabnavElement;
+        new (): HTMLHsTabnavElement;
+    };
+    interface HTMLHsTabsnavElement extends Components.HsTabsnav, HTMLStencilElement {
+    }
+    var HTMLHsTabsnavElement: {
+        prototype: HTMLHsTabsnavElement;
+        new (): HTMLHsTabsnavElement;
+    };
     interface HTMLHsTextElement extends Components.HsText, HTMLStencilElement {
     }
     var HTMLHsTextElement: {
@@ -217,15 +251,19 @@ declare global {
         "hs-button": HTMLHsButtonElement;
         "hs-callout": HTMLHsCalloutElement;
         "hs-card": HTMLHsCardElement;
+        "hs-demo-modal": HTMLHsDemoModalElement;
         "hs-header": HTMLHsHeaderElement;
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
+        "hs-modal": HTMLHsModalElement;
         "hs-pagination": HTMLHsPaginationElement;
         "hs-paragraph": HTMLHsParagraphElement;
         "hs-radio-group": HTMLHsRadioGroupElement;
         "hs-sidebar": HTMLHsSidebarElement;
         "hs-sidebar-link": HTMLHsSidebarLinkElement;
         "hs-stack": HTMLHsStackElement;
+        "hs-tabnav": HTMLHsTabnavElement;
+        "hs-tabsnav": HTMLHsTabsnavElement;
         "hs-text": HTMLHsTextElement;
     }
 }
@@ -268,6 +306,8 @@ declare namespace LocalJSX {
         "image"?: string;
         "subtitle"?: string;
     }
+    interface HsDemoModal {
+    }
     interface HsHeader {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "color"?: 'primary' | 'neutral' | 'white';
@@ -285,6 +325,10 @@ declare namespace LocalJSX {
     interface HsLoading {
         "color"?: Colors;
         "size"?: number;
+    }
+    interface HsModal {
+        "modaltitle"?: string;
+        "open"?: boolean;
     }
     interface HsPagination {
         "currentpage"?: number;
@@ -310,6 +354,10 @@ declare namespace LocalJSX {
         "direction"?: 'col' | 'row';
         "spacing"?: string;
     }
+    interface HsTabnav {
+    }
+    interface HsTabsnav {
+    }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
         "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
@@ -327,15 +375,19 @@ declare namespace LocalJSX {
         "hs-button": HsButton;
         "hs-callout": HsCallout;
         "hs-card": HsCard;
+        "hs-demo-modal": HsDemoModal;
         "hs-header": HsHeader;
         "hs-input": HsInput;
         "hs-loading": HsLoading;
+        "hs-modal": HsModal;
         "hs-pagination": HsPagination;
         "hs-paragraph": HsParagraph;
         "hs-radio-group": HsRadioGroup;
         "hs-sidebar": HsSidebar;
         "hs-sidebar-link": HsSidebarLink;
         "hs-stack": HsStack;
+        "hs-tabnav": HsTabnav;
+        "hs-tabsnav": HsTabsnav;
         "hs-text": HsText;
     }
 }
@@ -351,15 +403,19 @@ declare module "@stencil/core" {
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
             "hs-callout": LocalJSX.HsCallout & JSXBase.HTMLAttributes<HTMLHsCalloutElement>;
             "hs-card": LocalJSX.HsCard & JSXBase.HTMLAttributes<HTMLHsCardElement>;
+            "hs-demo-modal": LocalJSX.HsDemoModal & JSXBase.HTMLAttributes<HTMLHsDemoModalElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
+            "hs-modal": LocalJSX.HsModal & JSXBase.HTMLAttributes<HTMLHsModalElement>;
             "hs-pagination": LocalJSX.HsPagination & JSXBase.HTMLAttributes<HTMLHsPaginationElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
             "hs-radio-group": LocalJSX.HsRadioGroup & JSXBase.HTMLAttributes<HTMLHsRadioGroupElement>;
             "hs-sidebar": LocalJSX.HsSidebar & JSXBase.HTMLAttributes<HTMLHsSidebarElement>;
             "hs-sidebar-link": LocalJSX.HsSidebarLink & JSXBase.HTMLAttributes<HTMLHsSidebarLinkElement>;
             "hs-stack": LocalJSX.HsStack & JSXBase.HTMLAttributes<HTMLHsStackElement>;
+            "hs-tabnav": LocalJSX.HsTabnav & JSXBase.HTMLAttributes<HTMLHsTabnavElement>;
+            "hs-tabsnav": LocalJSX.HsTabsnav & JSXBase.HTMLAttributes<HTMLHsTabsnavElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;
         }
     }

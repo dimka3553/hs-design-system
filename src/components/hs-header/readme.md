@@ -19,6 +19,7 @@
 ### Used by
 
  - [hs-card](../hs-card)
+ - [hs-modal](../hs-modal)
 
 ### Depends on
 
@@ -29,6 +30,7 @@
 graph TD;
   hs-header --> hs-text
   hs-card --> hs-header
+  hs-modal --> hs-header
   style hs-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

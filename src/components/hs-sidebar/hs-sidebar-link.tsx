@@ -20,7 +20,9 @@ export class HsSidebarLink {
         <div class="relative">
           {' '}
           <div class={'pl-[24px] h-[40px] flex items-center gap-2 hover:bg-neutral-50 transition-[0.2s] ' + (this.active && ' !bg-primary-50')}>
-            <i class={`fa-solid fa-${this.icon} ${this.active ? 'text-primary-500' : 'text-neutral-500'}`}></i>
+            <div class="min-w-[24px] min-h-[24px] flex items-center justify-center">
+              <i class={`fa-solid fa-${this.icon} ${this.active ? 'text-primary-500' : 'text-neutral-500'}`}></i>
+            </div>
             <span class={`text-[1rem] ${this.active ? 'text-primary-500' : 'text-neutral-500'}`}>{this.label}</span>
           </div>
           {this.active && <div class="absolute right-0 w-[2px] top-0 h-[40px] bg-primary-500"></div>}
