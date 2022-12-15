@@ -18,7 +18,7 @@ export class HsCard {
     //   color: 'primary',
     // };
     return (
-      <div class="p-4 border-neutral-200 border-[1px] rounded-md flex flex-row flex-wrap justify-center w-full max-w-[320px] gap-8">
+      <div class="p-8 border-neutral-200 border-[1px] rounded-md flex flex-row flex-wrap justify-center w-full max-w-[320px] gap-8">
         <div class="w-full flex justify-center">
           <div class="min-w-[200px] min-h-[200px] w-[200px] h-[200px]">
             <hs-avatar image={this.image} />
