@@ -7,6 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Colors, htmlTags } from "./types";
 export namespace Components {
+    interface HsAnchor {
+        "to": string;
+    }
     interface HsBox {
         "as": htmlTags;
         "attr": string;
@@ -69,6 +72,12 @@ export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLHsButtonElement;
 }
 declare global {
+    interface HTMLHsAnchorElement extends Components.HsAnchor, HTMLStencilElement {
+    }
+    var HTMLHsAnchorElement: {
+        prototype: HTMLHsAnchorElement;
+        new (): HTMLHsAnchorElement;
+    };
     interface HTMLHsBoxElement extends Components.HsBox, HTMLStencilElement {
     }
     var HTMLHsBoxElement: {
@@ -130,6 +139,7 @@ declare global {
         new (): HTMLHsTextElement;
     };
     interface HTMLElementTagNameMap {
+        "hs-anchor": HTMLHsAnchorElement;
         "hs-box": HTMLHsBoxElement;
         "hs-button": HTMLHsButtonElement;
         "hs-callout": HTMLHsCalloutElement;
@@ -143,6 +153,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface HsAnchor {
+        "to"?: string;
+    }
     interface HsBox {
         "as"?: htmlTags;
         "attr"?: string;
@@ -201,6 +214,7 @@ declare namespace LocalJSX {
         "weight"?: '400' | '500' | '700' | 'normal' | 'bold';
     }
     interface IntrinsicElements {
+        "hs-anchor": HsAnchor;
         "hs-box": HsBox;
         "hs-button": HsButton;
         "hs-callout": HsCallout;
@@ -217,6 +231,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "hs-anchor": LocalJSX.HsAnchor & JSXBase.HTMLAttributes<HTMLHsAnchorElement>;
             "hs-box": LocalJSX.HsBox & JSXBase.HTMLAttributes<HTMLHsBoxElement>;
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
             "hs-callout": LocalJSX.HsCallout & JSXBase.HTMLAttributes<HTMLHsCalloutElement>;
