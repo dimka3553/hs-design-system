@@ -20,12 +20,14 @@
 ### Used by
 
  - [hs-button](../hs-button)
+ - [hs-input](../hs-input)
  - [hs-loading](../hs-loading)
 
 ### Graph
 ```mermaid
 graph TD;
   hs-button --> hs-box
+  hs-input --> hs-box
   hs-loading --> hs-box
   style hs-box fill:#f9f,stroke:#333,stroke-width:4px
 ```

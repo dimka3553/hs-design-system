@@ -26,6 +26,13 @@ export namespace Components {
         "color": 'primary' | 'neutral' | 'white';
         "type": '1' | '2' | '3' | '4' | '5' | '6';
     }
+    interface HsInput {
+        "helptext": string;
+        "helptexttype": 'error' | 'info';
+        "itemid": string;
+        "label": string;
+        "type": 'text' | 'password' | 'checkbox' | 'radio' | 'textarea';
+    }
     interface HsLoading {
         "color": Colors;
         "size": number;
@@ -67,6 +74,12 @@ declare global {
         prototype: HTMLHsHeaderElement;
         new (): HTMLHsHeaderElement;
     };
+    interface HTMLHsInputElement extends Components.HsInput, HTMLStencilElement {
+    }
+    var HTMLHsInputElement: {
+        prototype: HTMLHsInputElement;
+        new (): HTMLHsInputElement;
+    };
     interface HTMLHsLoadingElement extends Components.HsLoading, HTMLStencilElement {
     }
     var HTMLHsLoadingElement: {
@@ -89,6 +102,7 @@ declare global {
         "hs-box": HTMLHsBoxElement;
         "hs-button": HTMLHsButtonElement;
         "hs-header": HTMLHsHeaderElement;
+        "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
         "hs-paragraph": HTMLHsParagraphElement;
         "hs-text": HTMLHsTextElement;
@@ -115,6 +129,13 @@ declare namespace LocalJSX {
         "color"?: 'primary' | 'neutral' | 'white';
         "type"?: '1' | '2' | '3' | '4' | '5' | '6';
     }
+    interface HsInput {
+        "helptext"?: string;
+        "helptexttype"?: 'error' | 'info';
+        "itemid"?: string;
+        "label"?: string;
+        "type"?: 'text' | 'password' | 'checkbox' | 'radio' | 'textarea';
+    }
     interface HsLoading {
         "color"?: Colors;
         "size"?: number;
@@ -136,6 +157,7 @@ declare namespace LocalJSX {
         "hs-box": HsBox;
         "hs-button": HsButton;
         "hs-header": HsHeader;
+        "hs-input": HsInput;
         "hs-loading": HsLoading;
         "hs-paragraph": HsParagraph;
         "hs-text": HsText;
@@ -148,6 +170,7 @@ declare module "@stencil/core" {
             "hs-box": LocalJSX.HsBox & JSXBase.HTMLAttributes<HTMLHsBoxElement>;
             "hs-button": LocalJSX.HsButton & JSXBase.HTMLAttributes<HTMLHsButtonElement>;
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
+            "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;
             "hs-text": LocalJSX.HsText & JSXBase.HTMLAttributes<HTMLHsTextElement>;

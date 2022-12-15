@@ -1,0 +1,147 @@
+:host {
+  display: block;
+}
+
+textarea:focus+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+textarea:not(:placeholder-shown) {
+  border-color: var(--hs-color-primary-500);
+}
+
+textarea:not(:placeholder-shown)+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+/* do the same for input type text */
+input[type="text"]:focus+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+input[type="text"]:not(:placeholder-shown) {
+  border-color: var(--hs-color-primary-500);
+}
+
+input[type="text"]:not(:placeholder-shown)+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+/* do the same for type password */
+
+input[type="password"]:focus+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+input[type="password"]:not(:placeholder-shown) {
+  border-color: var(--hs-color-primary-500);
+}
+
+input[type="password"]:not(:placeholder-shown)+label {
+  color: var(--hs-color-primary-500);
+  font-size: 0.75rem;
+  top: -1.5rem;
+  z-index: 2;
+}
+
+/* input type radio display none */
+
+input[type="radio"] {
+  display: none;
+}
+
+/* input type radio label */
+
+input[type="radio"]+.radio {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--hs-color-neutral-200);
+  display: inline-block;
+  position: relative;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked+.radio {
+  border: 1px solid var(--hs-color-primary-500);
+  transition: 0.2s;
+}
+
+input[type="radio"]:checked+.radio::after {
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--hs-color-primary-500);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+
+}
+
+/* do the same for checkbox */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--hs-color-neutral-200);
+  display: inline-block;
+  position: relative;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked+.checkbox {
+  border: 1px solid var(--hs-color-primary-500);
+  transition: 0.2s;
+}
+
+input[type="checkbox"]:checked+.checkbox::after {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--hs-color-primary-500);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+
+input[type="checkbox"]:checked+.checkbox .tick {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
