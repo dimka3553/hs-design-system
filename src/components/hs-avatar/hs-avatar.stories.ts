@@ -11,6 +11,9 @@ export default {
     countryimage: {
       control: { type: 'text' },
     },
+    size: {
+      control: { type: 'number' },
+    },
   },
 };
 
@@ -19,7 +22,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = args => `
-  <div class="h-[200px] w-[200px] relative">
+  <div class="h-[${args.size}px] w-[${args.size}px] relative">
     <hs-avatar image="${args.image}" countryimage="${args.countryimage}"/>
   </div>
 `;
@@ -35,4 +38,5 @@ export const Avatar = Template.bind({});
 Avatar.args = {
   image: 'https://thispersondoesnotexist.com/image',
   countryimage: 'https://thisartworkdoesnotexist.com/',
+  size: 200,
 };

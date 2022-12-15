@@ -16,6 +16,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [hs-card](../hs-card)
+
 ### Depends on
 
 - [hs-text](../hs-text)
@@ -24,6 +28,7 @@
 ```mermaid
 graph TD;
   hs-header --> hs-text
+  hs-card --> hs-header
   style hs-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

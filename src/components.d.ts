@@ -37,6 +37,9 @@ export namespace Components {
         "type": 'info' | 'success' | 'warning' | 'danger';
     }
     interface HsCard {
+        "cardtitle": string;
+        "image": string;
+        "subtitle": string;
     }
     interface HsHeader {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -248,6 +251,9 @@ declare namespace LocalJSX {
         "type"?: 'info' | 'success' | 'warning' | 'danger';
     }
     interface HsCard {
+        "cardtitle"?: string;
+        "image"?: string;
+        "subtitle"?: string;
     }
     interface HsHeader {
         "align"?: 'left' | 'center' | 'right' | 'justify';

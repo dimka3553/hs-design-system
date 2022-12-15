@@ -4,15 +4,22 @@
  */
 export default {
   title: 'Components/Display/Card',
-  argTypes: {},
+  argTypes: {
+    text: { control: 'text' },
+    title: { control: 'text' },
+    subtitle: { control: 'text' },
+    image: { control: 'text' },
+  },
 };
 
 /**
  * Now you can create a reusable template for your component that you
  * can later on customize with different values for its attribute properties and events
  */
-const Template = () => `
-  <hs-card/>
+const Template = args => `
+  <hs-card title="${args.title}" subtitle="${args.subtitle}" image="${args.image}">
+    ${args.text}
+  </hs-card>
 `;
 
 /**
@@ -23,4 +30,9 @@ const Template = () => `
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
 export const Card = Template.bind({});
-Card.args = {};
+Card.args = {
+  text: 'How two students are taking their machine learning-based startup to CERN’s Entrepreneurship Program…',
+  title: 'Card Title',
+  subtitle: 'Card Subtitle',
+  image: 'https://via.placeholder.com/150',
+};
