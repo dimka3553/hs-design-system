@@ -1,18 +1,23 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'hs-avatar',
   styleUrl: 'hs-avatar.css',
-  shadow: true,
+  shadow: false,
 })
 export class HsAvatar {
+  @Prop()
+  image: string = 'https://thispersondoesnotexist.com/image';
+
+  @Prop()
+  countryimage: string = '';
 
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <div class="w-full h-full rounded-full relative">
+        <img class="w-full h-full rounded-full" src={this.image} alt="avatar" />
+        {this.countryimage && <img class="absolute bottom-0 right-0 w-[30%] h-[30%] rounded-full" src={this.countryimage} alt="country" />}
+      </div>
     );
   }
-
 }

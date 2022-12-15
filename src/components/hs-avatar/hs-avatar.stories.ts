@@ -4,15 +4,24 @@
  */
 export default {
   title: 'Components/Display/Avatar',
-  argTypes: {},
+  argTypes: {
+    image: {
+      control: { type: 'text' },
+    },
+    countryimage: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 /**
  * Now you can create a reusable template for your component that you
  * can later on customize with different values for its attribute properties and events
  */
-const Template = () => `
-  <hs-avatar/>
+const Template = args => `
+  <div class="h-[200px] w-[200px] relative">
+    <hs-avatar image="${args.image}" countryimage="${args.countryimage}"/>
+  </div>
 `;
 
 /**
@@ -23,4 +32,7 @@ const Template = () => `
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
 export const Avatar = Template.bind({});
-Avatar.args = {};
+Avatar.args = {
+  image: 'https://thispersondoesnotexist.com/image',
+  countryimage: 'https://thisartworkdoesnotexist.com/',
+};

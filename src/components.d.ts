@@ -11,6 +11,8 @@ export namespace Components {
         "to": string;
     }
     interface HsAvatar {
+        "countryimage": string;
+        "image": string;
     }
     interface HsBadge {
         "color": Colors;
@@ -219,6 +221,8 @@ declare namespace LocalJSX {
         "to"?: string;
     }
     interface HsAvatar {
+        "countryimage"?: string;
+        "image"?: string;
     }
     interface HsBadge {
         "color"?: Colors;
