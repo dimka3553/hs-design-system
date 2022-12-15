@@ -34,5 +34,5 @@ Card.args = {
   text: 'How two students are taking their machine learning-based startup to CERN’s Entrepreneurship Program…',
   title: 'Card Title',
   subtitle: 'Card Subtitle',
-  image: 'https://via.placeholder.com/150',
+  image: 'https://thisartworkdoesnotexist.com/',
 };
