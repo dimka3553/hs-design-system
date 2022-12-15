@@ -47,8 +47,8 @@ export namespace Components {
         "size": number;
     }
     interface HsPagination {
-        "currentPage": number;
-        "totalPages": number;
+        "currentpage": number;
+        "totalpages": number;
     }
     interface HsParagraph {
         "align": 'left' | 'center' | 'right' | 'justify';
@@ -227,8 +227,8 @@ declare namespace LocalJSX {
         "size"?: number;
     }
     interface HsPagination {
-        "currentPage"?: number;
-        "totalPages"?: number;
+        "currentpage"?: number;
+        "totalpages"?: number;
     }
     interface HsParagraph {
         "align"?: 'left' | 'center' | 'right' | 'justify';

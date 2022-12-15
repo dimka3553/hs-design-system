@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type     | Default |
-| ------------- | -------------- | ----------- | -------- | ------- |
-| `currentPage` | `current-page` |             | `number` | `1`     |
-| `totalPages`  | `total-pages`  |             | `number` | `5`     |
+| Property      | Attribute     | Description | Type     | Default |
+| ------------- | ------------- | ----------- | -------- | ------- |
+| `currentpage` | `currentpage` |             | `number` | `1`     |
+| `totalpages`  | `totalpages`  |             | `number` | `5`     |
 
 
 ## Dependencies

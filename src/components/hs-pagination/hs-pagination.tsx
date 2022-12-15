@@ -7,9 +7,9 @@ import { HsButton } from '../hs-button/hs-button';
 })
 export class HsPagination {
   @Prop()
-  currentPage: number = 1;
+  currentpage: number = 1;
   @Prop()
-  totalPages: number = 5;
+  totalpages: number = 5;
 
   render() {
     const leftButtonProps = {
@@ -28,19 +28,19 @@ export class HsPagination {
       <div class="flex items-center gap-6">
         <div
           onClick={() => {
-            if (this.currentPage > 1) this.currentPage = this.currentPage - 1;
+            if (this.currentpage > 1) this.currentpage = this.currentpage - 1;
           }}
         >
           <hs-button {...leftButtonProps}>back</hs-button>
         </div>
         <div class="flex items-center gap-2">
-          <div class=" flex items-center justify-center text-primary-500 rounded-md border-neutral-200 border-[1px] h-[26px] w-[26px]">{this.currentPage}</div>
+          <div class=" flex items-center justify-center text-primary-500 rounded-md border-neutral-200 border-[1px] h-[26px] px-[8px]">{this.currentpage}</div>
           <span>of</span>
-          <div>{this.totalPages}</div>
+          <div>{this.totalpages}</div>
         </div>
         <div
           onClick={() => {
-            if (this.currentPage < this.totalPages) this.currentPage = this.currentPage + 1;
+            if (this.currentpage < this.totalpages) this.currentpage = this.currentpage + 1;
           }}
         >
           <hs-button {...rightButtonProps}>next</hs-button>

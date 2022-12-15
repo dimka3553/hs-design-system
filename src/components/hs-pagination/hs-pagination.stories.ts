@@ -4,15 +4,22 @@
  */
 export default {
   title: 'Components/Navigation/Pagination',
-  argTypes: {},
+  argTypes: {
+    currentpage: {
+      control: { type: 'number' },
+    },
+    totalpages: {
+      control: { type: 'number' },
+    },
+  },
 };
 
 /**
  * Now you can create a reusable template for your component that you
  * can later on customize with different values for its attribute properties and events
  */
-const Template = () => `
-  <hs-pagination />
+const Template = args => `
+  <hs-pagination currentpage="${args.currentpage}" totalpages="${args.totalpages}" />
 `;
 
 /**
@@ -23,4 +30,7 @@ const Template = () => `
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
 export const Pagination = Template.bind({});
-Pagination.args = {};
+Pagination.args = {
+  currentpage: 1,
+  totalpages: 10,
+};
