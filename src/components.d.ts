@@ -7,6 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Colors, htmlTags } from "./types";
 export namespace Components {
+    interface HsAlert {
+        "color": 'primary' | 'secondary';
+    }
     interface HsAnchor {
         "to": string;
     }
@@ -97,6 +100,12 @@ export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLHsButtonElement;
 }
 declare global {
+    interface HTMLHsAlertElement extends Components.HsAlert, HTMLStencilElement {
+    }
+    var HTMLHsAlertElement: {
+        prototype: HTMLHsAlertElement;
+        new (): HTMLHsAlertElement;
+    };
     interface HTMLHsAnchorElement extends Components.HsAnchor, HTMLStencilElement {
     }
     var HTMLHsAnchorElement: {
@@ -200,6 +209,7 @@ declare global {
         new (): HTMLHsTextElement;
     };
     interface HTMLElementTagNameMap {
+        "hs-alert": HTMLHsAlertElement;
         "hs-anchor": HTMLHsAnchorElement;
         "hs-avatar": HTMLHsAvatarElement;
         "hs-badge": HTMLHsBadgeElement;
@@ -220,6 +230,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface HsAlert {
+        "color"?: 'primary' | 'secondary';
+    }
     interface HsAnchor {
         "to"?: string;
     }
@@ -306,6 +319,7 @@ declare namespace LocalJSX {
         "weight"?: '400' | '500' | '700' | 'normal' | 'bold';
     }
     interface IntrinsicElements {
+        "hs-alert": HsAlert;
         "hs-anchor": HsAnchor;
         "hs-avatar": HsAvatar;
         "hs-badge": HsBadge;
@@ -329,6 +343,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "hs-alert": LocalJSX.HsAlert & JSXBase.HTMLAttributes<HTMLHsAlertElement>;
             "hs-anchor": LocalJSX.HsAnchor & JSXBase.HTMLAttributes<HTMLHsAnchorElement>;
             "hs-avatar": LocalJSX.HsAvatar & JSXBase.HTMLAttributes<HTMLHsAvatarElement>;
             "hs-badge": LocalJSX.HsBadge & JSXBase.HTMLAttributes<HTMLHsBadgeElement>;
