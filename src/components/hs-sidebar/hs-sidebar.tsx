@@ -4,6 +4,7 @@ import { Component, h } from '@stencil/core';
   tag: 'hs-sidebar',
   styleUrl: 'hs-sidebar.css',
   shadow: false,
+  scoped: true,
 })
 export class HsSidebar {
   render() {

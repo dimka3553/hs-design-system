@@ -4,14 +4,13 @@ import { Component, h, Prop } from '@stencil/core';
   tag: 'hs-input',
   styleUrl: 'hs-input.css',
   shadow: false,
-  scoped: true,
 })
 export class HsInput {
   @Prop()
   type: 'text' | 'password' | 'checkbox' | 'radio' | 'textarea' = 'text';
 
   @Prop()
-  label: string = '';
+  label: string = 'Label';
 
   @Prop()
   helptext: string = '';
@@ -82,19 +81,19 @@ export class HsInput {
     } else {
       let style =
         (this.helptexttype != 'error' ? 'border-neutral-200' : '!border-danger-500') +
-        ' border-[1px] rounded-md p-3 bg-transparent w-full max-w-[400px] focus:border-primary-500 !outline-none transition-[0.2s]';
+        ' border-[1px] rounded-md p-3 bg-transparent w-full max-w-[400px] focus:border-primary-500 !outline-none transition-[0.2s] relative z-[2]';
 
       return (
-        <hs-box styles="relative">
+        <div class="relative">
           <input type={this.type} id={this.itemid} class={style} name={this.name} placeholder=" " value={this.value} />
           <label
             htmlFor={this.itemid}
-            class={'absolute p-2 m-1 transition-[0.2s] bg-white top-0 left-0 z-[-1] ' + (this.helptexttype != 'error' ? 'text-neutral-500' : '!text-danger-500')}
+            class={'absolute p-2 m-1 transition-[0.2s] bg-white top-0 left-0 z-[1] ' + (this.helptexttype != 'error' ? 'text-neutral-500' : '!text-danger-500')}
           >
             {this.label}
           </label>
           <p class={this.helptexttype == 'error' ? 'text-danger-500 text-[0.75rem] pl-3 mt-[2px]' : 'text-neutral-500 text-[0.75rem] pl-3 mt-[2px]'}>{this.helptext}</p>
-        </hs-box>
+        </div>
       );
     }
   }

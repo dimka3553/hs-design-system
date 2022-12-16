@@ -10,6 +10,6 @@ export class HsTabPanels {
       <Host>
         <slot />
       </Host>
-    )
+    );
   }
 }

@@ -64,6 +64,8 @@ export namespace Components {
         "color": Colors;
         "size": number;
     }
+    interface HsLoginform {
+    }
     interface HsModal {
         "modaltitle": string;
         "open": boolean;
@@ -98,6 +100,7 @@ export namespace Components {
     interface HsTabList {
     }
     interface HsTabPanel {
+        "label": string;
         "toggleSelected": (selected: boolean) => Promise<void>;
     }
     interface HsTabPanels {
@@ -110,7 +113,7 @@ export namespace Components {
     }
     interface HsText {
         "align": 'left' | 'center' | 'right' | 'justify';
-        "as": "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "as": "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class": string;
         "color": "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size": number;
@@ -197,6 +200,12 @@ declare global {
     var HTMLHsLoadingElement: {
         prototype: HTMLHsLoadingElement;
         new (): HTMLHsLoadingElement;
+    };
+    interface HTMLHsLoginformElement extends Components.HsLoginform, HTMLStencilElement {
+    }
+    var HTMLHsLoginformElement: {
+        prototype: HTMLHsLoginformElement;
+        new (): HTMLHsLoginformElement;
     };
     interface HTMLHsModalElement extends Components.HsModal, HTMLStencilElement {
     }
@@ -289,6 +298,7 @@ declare global {
         "hs-header": HTMLHsHeaderElement;
         "hs-input": HTMLHsInputElement;
         "hs-loading": HTMLHsLoadingElement;
+        "hs-loginform": HTMLHsLoginformElement;
         "hs-modal": HTMLHsModalElement;
         "hs-pagination": HTMLHsPaginationElement;
         "hs-paragraph": HTMLHsParagraphElement;
@@ -363,6 +373,8 @@ declare namespace LocalJSX {
         "color"?: Colors;
         "size"?: number;
     }
+    interface HsLoginform {
+    }
     interface HsModal {
         "modaltitle"?: string;
         "open"?: boolean;
@@ -397,6 +409,7 @@ declare namespace LocalJSX {
     interface HsTabList {
     }
     interface HsTabPanel {
+        "label"?: string;
     }
     interface HsTabPanels {
     }
@@ -408,7 +421,7 @@ declare namespace LocalJSX {
     }
     interface HsText {
         "align"?: 'left' | 'center' | 'right' | 'justify';
-        "as"?: "small" | "sub" | "sup" | "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "span" | "strong" | "time" | "u" | "var";
+        "as"?: "blockquote" | "caption" | "cite" | "code" | "del" | "dfn" | "em" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "i" | "ins" | "kbd" | "label" | "legend" | "mark" | "p" | "pre" | "q" | "s" | "samp" | "small" | "span" | "strong" | "sub" | "sup" | "time" | "u" | "var";
         "class"?: string;
         "color"?: "primary-50" | "primary-100" | "primary-300" | "primary-400" | "primary-500" | "primary-600" | "primary-700" | "primary-900" | "primary-800" | "white" | "black" | "neutral-50" | "neutral-100" | "neutral-200" | "neutral-500" | "neutral-700" | "neutral-900" | "success-50" | "success-500" | "danger-50" | "danger-500" | "warning-50" | "warning-500";
         "size"?: number;
@@ -427,6 +440,7 @@ declare namespace LocalJSX {
         "hs-header": HsHeader;
         "hs-input": HsInput;
         "hs-loading": HsLoading;
+        "hs-loginform": HsLoginform;
         "hs-modal": HsModal;
         "hs-pagination": HsPagination;
         "hs-paragraph": HsParagraph;
@@ -458,6 +472,7 @@ declare module "@stencil/core" {
             "hs-header": LocalJSX.HsHeader & JSXBase.HTMLAttributes<HTMLHsHeaderElement>;
             "hs-input": LocalJSX.HsInput & JSXBase.HTMLAttributes<HTMLHsInputElement>;
             "hs-loading": LocalJSX.HsLoading & JSXBase.HTMLAttributes<HTMLHsLoadingElement>;
+            "hs-loginform": LocalJSX.HsLoginform & JSXBase.HTMLAttributes<HTMLHsLoginformElement>;
             "hs-modal": LocalJSX.HsModal & JSXBase.HTMLAttributes<HTMLHsModalElement>;
             "hs-pagination": LocalJSX.HsPagination & JSXBase.HTMLAttributes<HTMLHsPaginationElement>;
             "hs-paragraph": LocalJSX.HsParagraph & JSXBase.HTMLAttributes<HTMLHsParagraphElement>;

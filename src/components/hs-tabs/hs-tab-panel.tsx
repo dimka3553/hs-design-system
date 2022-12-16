@@ -1,4 +1,4 @@
-import { Component, Element, h, Host, Method } from '@stencil/core';
+import { Component, Element, h, Host, Method, Prop } from '@stencil/core';
 
 @Component({
   tag: 'hs-tab-panel',
@@ -14,6 +14,9 @@ export class HsTabPanel {
   async toggleSelected(selected: boolean) {
     this.el.innerHTML = selected ? this.initialSlotContent : null;
   }
+
+  @Prop({ reflect: true })
+  label: string;
 
   componentWillLoad() {
     this.initialSlotContent = this.el.innerHTML;
